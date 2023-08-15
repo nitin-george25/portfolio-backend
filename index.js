@@ -2,18 +2,13 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const hbs = require("nodemailer-express-handlebars");
 const path = require("path");
-// var cors = require("cors");
-
-// var corsOptions = {
-//   origin: "http://localhost:3001/",
-//   optionsSuccessStatus: 200,
-// };
+var cors = require("cors");
 
 const app = express();
 require("dotenv").config();
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 const emailConfig = {
   service: "Gmail",
@@ -31,10 +26,10 @@ app.post("/add-lead", async (req, res) => {
 
   const handlebarOptions = {
     viewEngine: {
-      partialsDir: path.resolve("./api/views/"),
+      partialsDir: path.resolve("./views/"),
       defaultLayout: false,
     },
-    viewPath: path.resolve("./api/views/"),
+    viewPath: path.resolve("./views/"),
   };
 
   transporter.use("compile", hbs(handlebarOptions));
