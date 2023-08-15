@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm run test"
+  },
+  "author": "nitin-george",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.4",
+    "nodemailer-express-handlebars": "^6.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
+}
